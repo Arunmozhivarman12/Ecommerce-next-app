@@ -1,0 +1,28 @@
+
+   
+@import '../sass/custom.scss';
+@import '../sass/variables.scss';
+@import '../sass/loops';
+@import '../sass/buttons';
+@import '../sass/components/header'; 
+@import '../sass/components/home';  
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+// font
+
+
+
+h1,h2,h3,h4,h5,h6,a,p,ul,li,input,button,::placeholder,select,option,sup{
+    font-family:$font-fam !important;
+}
+
+
+
+
+
+

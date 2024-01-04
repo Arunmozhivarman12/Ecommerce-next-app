@@ -1,0 +1,22 @@
+@import "./mixins";
+// color
+
+$primary-color:#D10024;
+$border-color:#E4E7ED;
+$black1:#1E1F29;
+$black2:#15161D;
+$head-color:white;
+$transparent:transparent !important;
+
+// font
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+$font-fam: 'Montserrat', sans-serif;
+
+// container 
+    
+.grid{
+    display: grid;
+  }
+

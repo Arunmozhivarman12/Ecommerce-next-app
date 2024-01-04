@@ -1,95 +1,82 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
+import { Col, Container, Row } from "react-bootstrap";
+import Image from "next/image";
+import shop1 from "../public/img/shop01.png"
+import shop2 from "../public/img/shop02.png"
+import shop3 from "../public/img/shop03.png"
+ import { Add_to_cart } from "@/redux/cartreducer";
+import { useDispatch, useSelector } from "react-redux";
+
+
+
+
+const Home = () => {
+
+    const dispatch = useDispatch();
+    const Products = useSelector(state => state.Pro);
+    const Laptops = Products.filter( item => item.Category === "Laptops" );
+
+    return (
+
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <Container className="mt-4">
+                <Row>
+                    <Col lg="4" className="p-3 ">
+                        <div className="bg-border shop-now">
+                            <Image src={shop1} width={340} alt={"laptops"} className="d-block m-auto"></Image>
+                            <div className="shop-body p-4">
+                                <h4 className="text-white fw-5">Laptop<br /> Collection</h4>
+                                <a href="#" className="text-white fse-6 fw-3">SHOP NOW <i className="fa-regular fa-circle-right text-light"></i></a>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col lg="4" className="p-3 ">
+                        <div className="bg-border shop-now">
+                            <Image src={shop3} width={340} alt={"headphone"} className="d-block m-auto"></Image>
+                            <div className="shop-body p-4">
+                                <h4 className="text-white fw-5">Accessories<br /> Collection</h4>
+                                <a href="#" className="text-white fse-6 fw-3">SHOP NOW <i className="fa-regular fa-circle-right text-light"></i></a>
+                            </div>
+                        </div>                    </Col>
+                    <Col lg="4" className="p-3 ">
+                        <div className="bg-border shop-now">
+                            <Image src={shop2} width={340} alt={"camera"} className="d-block m-auto"></Image>
+                            <div className="shop-body p-4">
+                                <h4 className="text-white fw-5">Camera<br /> Collection</h4>
+                                <a href="#" className="text-white fse-6 fw-3">SHOP NOW <i className="fa-regular fa-circle-right text-light"></i></a>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+
+                <Container>
+                    <Row>
+                    {
+                        Laptops.map(product => (
+                            <Col key={product.id} lg={3} className="ps-3 pe-3 mb-5">
+                                <div className="border-border text-center product-grid">
+                                    <Image src={ product.image} alt="products" width="265" height="265"/>
+                                    <h6 className="text-secondary fw-2 fse-6">{product.Category}</h6>
+                                    <h6 className="fw-4 ">{product.name}</h6>
+                                <h5 className="text-red fse-5 fw-5 md-2">&#8377;{product.Price}</h5>
+                                <div className="bt-border pu-2 pd-2 product-grid-details">
+                                <i className="fa-regular fa-heart "></i>
+                                <i className="fa-solid fa-eye"></i>
+                                <button onClick={() =>dispatch(Add_to_cart(product)) }>cart</button>
+                                </div>
+                                </div>
+                            </Col>
+                        ))
+                    }
+</Row>
+                </Container>
+            </Container>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    )
 }
+
+export default Home;

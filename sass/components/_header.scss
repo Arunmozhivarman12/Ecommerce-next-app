@@ -1,0 +1,90 @@
+
+
+.contact{
+    margin-bottom: 0px !important;
+    padding-left:0px !important;
+    list-style-type: none;
+}
+
+i{
+    color:$primary-color;
+    margin-right: 7px;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none !important;
+}
+.store i{
+    font-size: 18px;
+    color: white;
+}
+
+form.searchbox select{
+    border-radius:20px 0px 0px 20px;
+    border:0;
+    border-right: 1px solid #E4E7ED;
+    height: 39px;
+}
+
+sup{
+    padding:4px 7px 4px 7px;
+    top: -12px !important;
+    left: -7px;
+    position: absolute;
+    font-size: 10px !important;
+}
+
+
+form.searchbox input{
+    border:0;
+    width: 300px;
+    height: 39px;
+}
+
+
+
+
+
+
+
+Nav a{
+    
+    position: relative;
+    &:before{
+    content: " ";
+    width:0%;
+    z-index: 1;
+    position: absolute;
+    background-color: $primary-color;
+    height: 1.5px;
+    bottom: 0;
+   transition: all 0.2s ease-in-out;
+}
+}
+
+Nav a:hover::before{
+    content: " ";
+    width:100%;
+    z-index: 1;
+    position: absolute;
+    background-color: $primary-color;
+    height: 1.5px;
+    bottom: 0;
+}
+
+.active{
+    color:$primary-color;
+    position: relative;
+
+    &:before{
+        content: " ";
+        width:100% !important;
+        z-index: 1;
+        position: absolute;
+        background-color: $primary-color;
+        height: 1.5px;
+        bottom: 0;
+    }
+}
+

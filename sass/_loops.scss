@@ -1,0 +1,226 @@
+
+
+
+$color:(
+    "red":$primary-color,
+    "border":$border-color,
+    "black1":$black1,
+    "black2":$black2,
+    "white":$head-color,
+    "transparent":$transparent
+);
+
+@each $key,$val in $color{
+    .text-#{$key}{
+        color: $val;
+    }
+
+    .bg-#{$key}{
+        background-color: $val;
+    }
+
+    .border-#{$key}{
+        border: 1px solid $val;
+    }
+
+    .border-#{$key}{
+      border: 1px solid $val;
+  }
+
+  .bb-#{$key}-1{
+    border-bottom: 1px solid $val;
+}
+
+.bb-#{$key}-2{
+  border-bottom: 2px solid $val;
+}
+
+.bb-#{$key}-3{
+  border-bottom: 3px solid $val;
+}
+
+.bt-#{$key}{
+  border-top: 1px solid $val;
+}
+}
+
+
+$font:(
+    "7":12px,
+    "6":14px,
+    "5":18px,
+    "4":22px,
+    "3":30px,
+    "2":37px,
+    "1":46px
+);
+
+@each $key,$val in $font{
+   .fse-#{$key}{
+    font-size: $val;
+   }
+}
+
+$line-height:(
+ 
+    "3":30px,
+    "2":35px,
+    "1":60px
+);
+
+@each $key,$val in $line-height{
+   .lh-#{$key}{
+    line-height:$val;
+   }
+}
+
+
+$fw:(
+    "6":900,
+    "5":700,
+    "4":600,
+    "3":500,
+    "2":400,
+    "1":300
+);
+
+@each $key,$val in $fw{
+   .fw-#{$key}{
+    font-weight:$val;
+   }
+}
+
+$width:1%;
+
+
+@for $i from 1 through 100{
+   .w-#{$i}{
+    width: $i * $width;
+   }
+}
+
+$basic-spacing:5px;
+
+$utilities : (
+  "margin":(
+    "prefix":"ma",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "margin-left":(
+    "prefix":"ml",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "margin-right":(
+    "prefix":"mr",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "margin-bottom":(
+    "prefix":"md",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "margin-top":(
+    "prefix":"mu",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "padding-left":(
+    "prefix":"pl",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "padding":(
+    "prefix":"pa",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "padding-top":(
+    "prefix":"pu",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "padding-right":(
+    "prefix":"pr",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  ),
+  "padding-bottom":(
+    "prefix":"pd",
+    "values":(
+        "0":0,
+        "1":$basic-spacing * 2,
+        "2":$basic-spacing * 4,
+        "3":$basic-spacing * 6,
+        "4":$basic-spacing * 8,
+        "5":$basic-spacing * 10,
+    )
+  )
+);
+
+@each $key,$val in $utilities{
+  $prefix:map-get( $val,"prefix");
+  $value:map-get($val,"values");
+@each $prop,$vall in $value{
+    .#{$prefix}-#{$prop}{
+        #{$key}:$vall ;
+    }
+}
+}
+
