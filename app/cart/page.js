@@ -1,7 +1,7 @@
 'use client'
 import { useSelector } from "react-redux";
 
-const cart = () =>{
+const Cart = () =>{
     const cart = useSelector(state=>state.cart.product)
     console.log(cart)
     return(
@@ -17,4 +17,4 @@ const cart = () =>{
     )
 }
 
-export default cart;
+export default Cart;
