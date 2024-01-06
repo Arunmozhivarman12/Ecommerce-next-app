@@ -22,7 +22,7 @@ import { Providers } from "@/redux/provider";
         <main >{children}
     
            </main></Providers>
-            <script src="https://kit.fontawesome.com/bca23afe5b.js" crossOrigin="anonymous"></script>      
+            <script src="https://kit.fontawesome.com/bca23afe5b.js" crossOrigin="anonymous" async></script>      
         </body>
     </html>
     )
