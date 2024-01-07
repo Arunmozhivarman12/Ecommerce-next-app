@@ -99,6 +99,15 @@ $width:1%;
    }
 }
 
+$br:1px;
+
+
+@for $i from 1 through 100{
+   .br-#{$i}{
+    border-radius: $i * $br;
+   }
+}
+
 $basic-spacing:5px;
 
 $utilities : (

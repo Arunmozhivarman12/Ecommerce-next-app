@@ -63,12 +63,16 @@ const Home = () => {
                                     <h6 className="fw-4 ">{product.name}</h6>
                                 <h5 className="text-red fse-5 fw-5 md-2">&#8377;{product.Price}</h5>
                                 <div className="bt-border pu-2 pd-2 product-grid-details">
-                                <i className="fa-regular fa-heart "></i>
-                                <i className="fa-solid fa-eye"></i>
-                                <button onClick={() =>dispatch(Add_to_cart(product)) }>cart</button>
+                                <i className="fa-regular fa-heart me-4"></i>
+                                <i className="fas fa-exchange-alt"></i>
+                                <i className="fa-solid fa-eye "></i>
                                 </div>
+                                </div>
+                                <div className="bg-dark text-center py-2">
+                                    <button onClick={() =>dispatch(Add_to_cart(product)) } className="me-3 bg-red border-transparent text-white fw-5 px-4 py-2 fse-6 br-20">ADD TO CART</button>
                                 </div>
                             </Col>
+                            
                         ))
                     }
 </Row>
