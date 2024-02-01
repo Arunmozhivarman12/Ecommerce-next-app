@@ -56,7 +56,7 @@ const Home = () => {
                     <Row>
                     {
                         Laptops.map(product => (
-                            <Col key={product.id} lg={3} className="ps-3 pe-3 mb-5">
+                            <Col key={product.id} lg={3} className="ps-3 pe-3  product-col">
                                 <div className="border-border text-center product-grid">
                                     <Image src={ product.image} alt="products" width="265" height="265"/>
                                     <h6 className="text-secondary fw-2 fse-6">{product.Category}</h6>
@@ -68,8 +68,8 @@ const Home = () => {
                                 <i className="fa-solid fa-eye "></i>
                                 </div>
                                 </div>
-                                <div className="bg-dark text-center py-2">
-                                    <button onClick={() =>dispatch(Add_to_cart(product)) } className="me-3 bg-red border-transparent text-white fw-5 px-4 py-2 fse-6 br-20">ADD TO CART</button>
+                                <div className="bg-dark text-center py-2 w-97 d-block m-auto cart-btn">
+                                    <button onClick={() =>dispatch(Add_to_cart(product)) } className="bg-red border-transparent text-white fw-5 px-4 py-2 fse-6 br-20">ADD TO CART</button>
                                 </div>
                             </Col>
                             
